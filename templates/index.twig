@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="main">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+  @keyframes glowFlash {
+            0% { color: red; text-shadow: 0 0 10px red; }
+            50% { color: white; text-shadow: none; }
+            100% { color: red; text-shadow: 0 0 10px red; }
+        }
+
+        .developer-warning {
+            animation: glowFlash 2s infinite; /* Adjust duration as needed */
+        }
+        
+      hr {
+          border: 1px solid black;
+      }
+      body {
+         font-family: 'Arial', sans-serif;
+         margin: 0;
+         padding: 0;
+         min-height:1200px;
+         background: url("images/background.png");
+         
+         }
+
+      .navbar {
+         background: linear-gradient(to right, #4e54c8, #8f94fb);
+         overflow: hidden;
+      }
+
+      .navbar {
+         background-color: #636427;
+         overflow: hidden;
+      }
+
+      .navbar a {
+         float: left;
+         display: block;
+         color: white;
+         text-align: center;
+         padding: 14px 16px;
+         text-decoration: none;
+      }
+
+      .navbar a:hover {
+         background-color: #ddd;
+         color: black;
+      }
+      
+        .center {
+      margin: auto;
+      width: 50%;
+      border: 3px solid green;
+      padding: 10px;
+   }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            margin-top: auto;
+        }
+      
+  </style>
+  <title>Nexus home</title>
+  <meta><!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.2/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+   <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+   <script src="//unpkg.com/alpinejs" defer></script>
+   <script type="module">import jqueryUi from 'https://cdn.jsdelivr.net/npm/jquery-ui@1.13.2/+esm'</script>
+</head>
+<body class="main">
+  <div class="navbar">
+    <a href="gaming.php" class="btn btn-outline-success">Games Page</a> <a href="index.php" class="btn btn-outline-success">Home</a> <a href="console.php">Console</a> <a href="files/filemanager.php">File Manager</a> <a href="help.php">Nexus Help</a> <a href="ide/ICEcoder/">V-IDE</a>
+  </div>
+  <br>
+  <div class="center">
+   {% if environmentMode == 'development' %}
+        <div class="developer-warning">
+           <h1>Nexus Home</h1> <h3>⚠ You are in developer mode ⚠</h3>
+           <code><strong>if your using a packaged version of Nexus and see this message then please make a Github issue and exit Nexus as developer mode is inherently not secure and can lead to system compromise or exposure to security vulnerabilities</strong></code>
+        </div>
+    {% endif %}
+    <br>
+    <p>Hello and welcome to Nexus</p>
+    <p>Nexus is a free and open source anti-censorship tool made by Oxide Cheats and forked and maintained by D&amp;R studios!</p>
+    <p>Nexus is currently still undergoing development and this page will be subject to change.</p>
+    <p>Feel free to checkout the nexus project <a href="https://github.com/JohnTeBrown/Nexus-Final">@Nexus</a> this is also where Github issues go.</p>
+    <p>the proxy is included as a part of our game collection on the games page</p>
+    <br>
+    <p>if your planning on trying to contribute to Nexus we recommend that you download and install VS-Code on windows and grab our .editorconfig</p>
+    <p>or if your using a mac it's <strong>highly</strong> recommended that you download <a href="https://apps.apple.com/us/app/bbedit/id404009241?mt=12">BBEdit</a> as that is what Nexus is made with.</p>
+    <p>though <a href="https://apps.apple.com/us/app/bbedit/id404009241?mt=12">BBEdit</a> is a paid software and has a 30 day evaluation period, it costs 3$ a month, if you are unable to pay for <a href="https://apps.apple.com/us/app/bbedit/id404009241?mt=12">BBEdit</a> feel free to use VS-Code wilth one of our .editorconfig's</p>
+    <p>Generally any text editor that supports .editorconfig will work, but <a href="https://apps.apple.com/us/app/bbedit/id404009241?mt=12">BBEdit</a> will function the best</p>
+    <hr>	
+     <h4>Extra notes</h4>
+     <md-block>
+    *php files not displaying pages?*
+    
+    keep in mind **the php server has to be started** in order for .php pages to display content
+    if your using Nexus in a prepackaged application form and the server didn't start please make a Github issue on the Nexus-Final Github page
+    if your a developer or someone running Nexus from source please note you **Must** go to our repositories page and find <a href="https://github.com/JohnTeBrown/app-server">*app server*</a>, please insert all of the
+    Nexus source code files and folders within the **www** folder of *app server* then run:
+    ```bash
+    php server.php -7
+    ```
+    then copy the local host URL.
+     </md-block>
+     <br>
+  </div>
+  <div class="footer">
+    © 2023 Nexus Unblocker. All Rights Reserved. | <a href="https://github.com/JohnTeBrown/Nexus-Final">Contribute</a> | <a href="https://github.com/JohnTeBrown">About</a>
+  </div>
+</body>
+</html>

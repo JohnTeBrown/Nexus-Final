@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Nexus gaming</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0"><!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><!-- Optional theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous"><!-- Latest compiled and minified JavaScript -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+        body {
+         font-family: 'Arial', sans-serif;
+         margin: 0;
+         padding: 0;
+         min-height:1200px;
+         background: url("images/background.png");
+      }
+
+      .navbar {
+         background: linear-gradient(to right, #4e54c8, #8f94fb);
+         overflow: hidden;
+      }
+
+      .navbar {
+         background-color: #636427;
+         overflow: hidden;
+      }
+
+      .navbar a {
+         float: left;
+         display: block;
+         color: white;
+         text-align: center;
+         padding: 14px 16px;
+         text-decoration: none;
+      }
+
+      .navbar a:hover {
+         background-color: #ddd;
+         color: black;
+      }
+      
+        .center {
+      margin: auto;
+      width: 50%;
+      border: 3px solid green;
+      padding: 10px;
+   }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .center {
+      margin: auto;
+      width: 50%;
+      border: 3px solid green;
+      padding: 10px;
+   }
+   
+        html {
+  scroll-behavior: smooth;
+  }
+  </style>
+  <style type="text/css">
+  div.c2 {position: relative; height: 0; overflow: hidden; padding-bottom: 56.25%;}
+  iframe.c1 {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+  </style>
+</head>
+<body>
+  <div class="navbar">
+      <a href="gaming.php" class="btn btn-outline-success">Games Page</a> <a href="index.php" class="btn btn-outline-success">Home</a> <a href="console.php">Console</a> <a href="files/filemanager.php">File Manager</a> <a href="help.php">Nexus Help</a> <a href="ide/ICEcoder/">V-IDE</a>
+  </div>
+  <hr>
+
+  <br>
+  <div class="center">
+    <h1>Nexus gaming</h1>
+    <br>
+    <p>Welcome to nexus gaming, the gaming page provides a variety of html games to choose from</p>
+    <p>we do not directly host the games, all games are embeds from other sites so if one goes down we are truly sorry.</p>
+    <p>press "Cinema Mode" to enter fullscreen, press ESC on your keyboard to exit "Cinema Mode"</p>
+    <p>keep in mind we do not actively maintain the games site and that is handled by someone else, if features are broken it is out of our control</p>
+    <br>
+    <button class="btn" onclick="openFullscreen()">Cinema Mode</button> 
+    <script>
+    function openFullscreen() {
+    var elem = document.getElementById("iframe");
+
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+      elem.msRequestFullscreen();
+    }
+    }
+    </script>
+    <div class="c2">
+      <iframe id="iframe" src="https://radon.games/" seamless="seamless" allowfullscreen="true" class="c1" name="iframe">Browser not compatible.</iframe>
+    </div>
+  </div>
+  <div class="footer">
+    © 2023 Nexus Unblocker. All Rights Reserved. | <a href="https://github.com/JohnTeBrown/Nexus-Final">Contribute</a> | <a href="https://github.com/JohnTeBrown">About</a>
+  </div>
+</body>
+</html>

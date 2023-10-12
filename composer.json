@@ -1,0 +1,6 @@
+{
+    "require": {
+        "symfony/symfony": "^5.0",
+        "twig/twig": "^3.0"
+    }
+}
