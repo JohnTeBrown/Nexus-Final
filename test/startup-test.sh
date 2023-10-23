@@ -5,14 +5,14 @@
 ########################
 
 # declaring variables
-correct="/php-app-server/"
-where=$(pwd)
-repair=$(cd ..) 
+correct="/php-app-server/" # correct location
+where=$(pwd) 
+repair=$(cd ..) # repair arguments | can be changed based on needs.
 max_retries=34
 retries=0
-namehash=$((RANDOM % 10000))
+namehash=$((RANDOM % 10000)) 
 log="log/operation_log${namehash}.log"
-plugins="disabled"
+plugins="disabled" # switch to enabled to allow perl plugins
 
 # BEGINNING plugins list
 plugins=(
@@ -31,27 +31,49 @@ while [ "$retries" -lt "$max_retries" ]; do
 				php server.php -7
 				break
 			else
+				if [ "$plugins" == "enabled" ]; then
+					echo "Plugins are enabled, executing plugins list now" >> "$log"
+					echo "Plugins are enabled, executing plugins list now"
+					sleep()
+					for script_with_args in "${plugins[@]}"; do
+						script_path=${script_with_args%% *}
+						script_args=${script_with_args#* }
+						
+						echo "strapping plugins: $script_path with arguments: $script_args" >> "$log"
+						echo "strapping plugins: $script_path with arguments: $script_args"
+						perl "$script_path" $script_args
+					done
+				else
+					echo "Error: plugins are disabled aborting bootstrapper process." >> "$log"
+					echo "Error: plugins are disabled aborting bootstrapper process."
+				fi
+				
 				# try to attempt fix operation
 				eval $repair until [ "$where" == "$correct" ];
-					php server.php -7
+					echo "================================================Information=====================================================" >> "$log"
+					echo "the operation encountered a error :: incorrect directory 'server.php' not found. . ." >> "$log"
+					echo "the operation encountered a error :: incorrect directory 'server.php' not found. . ."
+					
+					sleep 6
+					
+					echo "Attempting operation repair, please stand by. . ." >> "$log"
+					echo "Attempting operation repair, please stand by. . ."
+					
+					sleep 10
+					
+					echo "attempting to run startup operation, please stand by. . ." >> "$log"
+					echo "attempting to run startup operation, please stand by. . ."
+					sleep 6
+					
+					echo "running server-startup test." >> "$log"
+					echo "running server-startup test."
+					echo "* this test does not dictate application functionality and only predicts reliability/stability *." >> "$log"
+					echo "* this file is property of Rainsoftware, Rainsoftware's BreakinRain Security, Rainsoftwares Solem Locke *" >> "$log" 
+					echo "================================================================================================================" >> "$log"
+					
+					php ../../server.php -7/
 				fi
 		done
-		if [ "$plugins" == "enabled" ]; then
-			echo "Plugins are enabled, executing plugins list now" >> "$log"
-			echo "Plugins are enabled, executing plugins list now"
-			sleep()
-			for script_with_args in "${plugins[@]}"; do
-				script_path=${script_with_args%% *}
-				script_args=${script_with_args#* }
-				
-				echo "strapping plugins: $script_path with arguments: $script_args" >> "$log"
-				echo "strapping plugins: $script_path with arguments: $script_args"
-				perl "$script_path" $script_args
-			done
-		else
-			echo "Error: plugins are disabled aborting bootstrapper process." >> "$log"
-			echo "Error: plugins are disabled aborting bootstrapper process."
-		fi
 		
 	# Check if the operation broke due to reaching the retries limit
 	if [ "$retries" -ge "$max_retries" ]; then
