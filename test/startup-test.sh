@@ -1,8 +1,9 @@
 #!/bin/bash
 
-########################
-#(C) Rainsoftware 2023##
-########################
+###########################
+## (C) Rainsoftware 2023 ##
+##    "We  Make  Things" ##
+###########################
 
 # declaring variables
 correct="/php-app-server/" # correct location
@@ -34,7 +35,7 @@ while [ "$retries" -lt "$max_retries" ]; do
 				if [ "$plugins" == "enabled" ]; then
 					echo "Plugins are enabled, executing plugins list now" >> "$log"
 					echo "Plugins are enabled, executing plugins list now"
-					sleep()
+					sleep 6
 					for script_with_args in "${plugins[@]}"; do
 						script_path=${script_with_args%% *}
 						script_args=${script_with_args#* }
@@ -70,6 +71,8 @@ while [ "$retries" -lt "$max_retries" ]; do
 					echo "* this test does not dictate application functionality and only predicts reliability/stability *." >> "$log"
 					echo "* this file is property of Rainsoftware, Rainsoftware's BreakinRain Security, Rainsoftwares Solem Locke *" >> "$log" 
 					echo "================================================================================================================" >> "$log"
+					
+					sleep 7
 					
 					php ../../server.php -7/
 				fi
