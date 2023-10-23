@@ -2,7 +2,6 @@
 
 ###########################
 ## (C) Rainsoftware 2023 ##
-##    "We  Make  Things" ##
 ###########################
 
 # declaring variables
