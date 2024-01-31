@@ -1,7 +1,7 @@
-name: Upload coverage reports to Codecov
+name: codecov
   uses: codecov/codecov-action@v3
   env:
-    CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    CODECOV_TOKEN: ${{ secrets.CODECOV_SECRET }}
     comment: false
 coverage:
   status:
