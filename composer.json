@@ -1,4 +1,6 @@
 {
+    "name": "rainsoftware/Nexus-Final",
+    "description": "a advanced unblocker for chromeos systems with linux enabled",
     "require": {
         "symfony/symfony": "^5.0",
         "twig/twig": "^3.0"
