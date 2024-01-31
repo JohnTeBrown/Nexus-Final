@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gh/rainsoftware/Nexus-Final/graph/badge.svg?token=V10XV02PK2)](https://codecov.io/gh/rainsoftware/Nexus-Final) [![Build Status](https://img.shields.io/github/workflow/status/rainsofware/Nexus-Final/PHP%20Composer)](https://github.com/rainsofware/Nexus-Final/actions)
+[![codecov](https://codecov.io/gh/rainsoftware/Nexus-Final/graph/badge.svg?token=V10XV02PK2)](https://codecov.io/gh/rainsoftware/Nexus-Final) [![Build Status](https://img.shields.io/github/workflow/status/rainsoftware/Nexus-Final/PHP%20Composer)](https://github.com/rainsoftware/Nexus-Final/actions)
 
 
 # Welcome to Nexus.
