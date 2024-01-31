@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gh/rainsoftware/Nexus-Final/graph/badge.svg?token=V10XV02PK2)](https://codecov.io/gh/rainsoftware/Nexus-Final) [![Build Status](https://github.com//rainsoftware/Nexus-Final/actions/workflows/php.yml/badge.svg)
+[![codecov](https://codecov.io/gh/rainsoftware/Nexus-Final/graph/badge.svg?token=V10XV02PK2)](https://codecov.io/gh/rainsoftware/Nexus-Final) ![Build Status](https://github.com//rainsoftware/Nexus-Final/actions/workflows/php.yml/badge.svg)
 
 
 
